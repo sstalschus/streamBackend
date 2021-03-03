@@ -4,6 +4,8 @@ const { resolve } = require('path')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 app.get('/', (req, res) => {
     return res.sendFile(__dirname + '/index.html')
 })
@@ -40,4 +42,4 @@ app.get('/stream', (req, res) => {
     songStream.pipe(res)
 })
 
-app.listen(3334)
+app.listen(port)
